@@ -1,0 +1,91 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 320px) {
+  .wrap{
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 468px) {
+  .wrap{
+    flex-direction: row;
+  }
+}
+.wrap  {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress__animate{
+  animation: round 2s linear infinite paused;
+}
+@keyframes round {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+#progress__animate-circle{
+  fill: none;
+  stroke: #ffdb4d;
+  stroke-width: 12;
+  stroke-dasharray: 20 475;
+  transition: all 0.6s ease;
+  }
+.control{
+  margin-top: 20px;
+  height: 150px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+.control__row{
+  display: flex;
+  align-items: center;
+}
+.control__row label{
+  margin-left: 20px;
+  cursor: pointer;
+}
+.control__btn{
+  position: relative;
+}
+.control__value{
+  border: 2px solid #4a4a4a;
+  width: 48px;
+  height: 38px;
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.control__value:focus{
+  border: 2px solid #7ed321;
+  outline: none;
+}
+.control__btn-animate, .control__btn-hide{
+  border: none;
+  width: 70px;
+  height: 40px;
+  border-radius: 50px;
+  background: #4a4a4a;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.control__btn-hide:focus, .control__btn-animate:focus{
+  outline: none;
+}
+.control__btn-round{
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  bottom: 0;
+  right: 0;
+  left: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}

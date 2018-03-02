@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h2>Progress</h2>
+
+    <svg width="200px" height="200px" id="svg" class="progress__animate" style="animation-play-state: paused;">
+      <circle cx="100" cy="100" r="75" fill="none" stroke="#efefec" stroke-width="12" />
+      <circle id="progress__animate-circle" cx="100" cy="100" r="75" fill="none" transform="rotate(-90 100 100)"/>
+    </svg>
+
+    <div class="control">
+      <div class="control__row">
+        <input type="text" id="control__value" class="control__value">
+        <label for="control__value">Value</label>
+      </div>
+      <div class="control__row">
+
+        <div class="control__btn">
+          <button id="control__btn-animate" class="control__btn-animate"></button>
+          <div class="control__btn-round"></div>
+        </div>
+
+        <label for="control__btn-animate">Animate</label>
+
+      </div>
+
+      <div class="control__row">
+
+        <div class="control__btn">
+          <button id="control__btn-hide" class="control__btn-hide"></button>
+          <div class="control__btn-round" onClick=""></div>
+        </div>
+
+        <label for="control__btn-hide">Hide</label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+const svg = document.getElementById('svg'),
+    animate = document.getElementById('control__btn-animate'),
+    hide = document.getElementById('control__btn-hide'),
+    round = document.getElementsByClassName('control__btn-round'),
+    progress = document.getElementById('progress__animate-circle'),
+    input = document.getElementById('control__value');
+let bool = true,
+    dash = '23.75 475';
+
+
+var Progress = {
+
+  setMod: (name, flag = false ) =>{
+    flag == true ? name(flag) : name(flag);
+  },
+
+  setValue: function(){
+    input.addEventListener("change", function(){
+      value = input.value;
+      value = value * 4.75;
+      var dash = value + ' 475';
+      progress.style.strokeDasharray = dash;
+    });
+  }
+
+}
+
+function animated(flag){
+  if ( flag == true){
+    svg.style.animationPlayState = 'running';
+    animate.style.background = '#7ed321';
+    round[0].style.left = '32px';
+  }else{
+    svg.style.animationPlayState = 'paused';
+    animate.style.background = '#4a4a4a';
+    round[0].style.left = '2px';
+  }
+};
+
+
+  Progress.setValue();
+  progress.style.strokeDasharray = dash;
+
+  animate.addEventListener("click", function(){
+     if ( bool == true ){
+       bool = false;
+       Progress.setMod(animated, true);
+     }else{
+       bool = true;
+       Progress.setMod(animated);
+     }
+  });
+
+  round[0].addEventListener("click", function(){
+     if ( bool == true ){
+       bool = false;
+       Progress.setMod(animated, true);
+     }else{
+       bool = true;
+       Progress.setMod(animated);
+     }
+  });
+
+
+  hide.addEventListener("click", function(){
+    if( svg.style.opacity == '0'){
+      this.style.background = '#4a4a4a';
+      round[1].style.left = '2px';
+      svg.style.opacity = '1';
+    }else{
+      svg.style.opacity = '0';
+      this.style.background = '#7ed321';
+      round[1].style.left = '32px';
+    }
+  });
+
+  round[1].addEventListener("click", function(){
+    if( svg.style.opacity == '0'){
+      hide.style.background = '#4a4a4a';
+      this.style.left = '2px';
+      svg.style.opacity = '1';
+    }else{
+      svg.style.opacity = '0';
+      hide.style.background = '#7ed321';
+      this.style.left = '32px';
+    }
+  });
+
+
+
+
+
+
+  </script>
+</body>
+</html>
