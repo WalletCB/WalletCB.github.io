@@ -2,20 +2,14 @@
   margin: 0;
   padding: 0;
 }
-@media screen and (min-width: 320px) {
-  .wrap{
-    flex-direction: column;
-  }
-}
-@media screen and (min-width: 468px) {
-  .wrap{
-    flex-direction: row;
-  }
+#control__btn-hide, #control__btn-animate{
+  opacity: 0;
 }
 .wrap  {
-  margin-top: 100px;
+  width: 568px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .progress__animate{
@@ -88,4 +82,19 @@
   left: 2px;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+@media screen and (min-width: 320px) {
+  .wrap{
+    flex-direction: column;
+    width: 320px;
+    height: 568px;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 568px) {
+  .wrap{
+    flex-direction: row;
+    width: 568px;
+    height: 320px;
+  }
 }

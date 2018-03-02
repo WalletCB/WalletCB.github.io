@@ -21,75 +21,90 @@
         <input type="text" id="control__value" class="control__value">
         <label for="control__value">Value</label>
       </div>
-      <div class="control__row">
 
-        <div class="control__btn">
-          <button id="control__btn-animate" class="control__btn-animate"></button>
+      <div class="control__row">
+        <div class="control__btn-animate">
+          <button id="control__btn-animate"></button>
           <div class="control__btn-round"></div>
         </div>
-
         <label for="control__btn-animate">Animate</label>
-
       </div>
 
       <div class="control__row">
-
-        <div class="control__btn">
-          <button id="control__btn-hide" class="control__btn-hide"></button>
-          <div class="control__btn-round" onClick=""></div>
+        <div class="control__btn-hide">
+          <button id="control__btn-hide"></button>
+          <div class="control__btn-round"></div>
         </div>
-
         <label for="control__btn-hide">Hide</label>
-
       </div>
 
     </div>
 
   </div>
+  
+  <!--  Вообще использую webpack и модульный CSS -->
 
   <script>
 const svg = document.getElementById('svg'),
-    animate = document.getElementById('control__btn-animate'),
-    hide = document.getElementById('control__btn-hide'),
-    round = document.getElementsByClassName('control__btn-round'),
+    animate = document.querySelector('.control__btn-animate'),
+    hide = document.querySelector('.control__btn-hide'),
     progress = document.getElementById('progress__animate-circle'),
     input = document.getElementById('control__value');
+    // Создаем переменные HTML элементов
 let bool = true,
     dash = '23.75 475';
+  // логическая переменная и переменная для расстояния круга
 
 
 var Progress = {
+// Создаем объект с классами setMod и setValue
 
   setMod: (name, flag = false ) =>{
-    flag == true ? name(flag) : name(flag);
+    flag == true ? name(true) : name(false)
   },
+  // принимает имя функции и boolean параметр и просто выполняет ее
+  // c этим параметром
 
-  setValue: function(){
+  setValue: () => {
     input.addEventListener("change", function(){
       value = input.value;
-      value = value * 4.75;
-      var dash = value + ' 475';
+      // принимаем значение input
+      dash = value * 4.75 + ' 475';
+      // переводим в 100% систему и задаем значение
       progress.style.strokeDasharray = dash;
+      // изменяем сам элемент
     });
   }
-
+// Функция следит за значением input и если оно меняется меняет параметр stroke-dasharray
+// stroke-strokeDasharray отступ от начала в svg элементах т.к. полный круг 475
+// а нам нужно 100 и умножается на 4.75
 }
 
 function animated(flag){
   if ( flag == true){
     svg.style.animationPlayState = 'running';
     animate.style.background = '#7ed321';
-    round[0].style.left = '32px';
+    animate.children[1].style.left = '32px';
+    return true;
   }else{
     svg.style.animationPlayState = 'paused';
     animate.style.background = '#4a4a4a';
-    round[0].style.left = '2px';
+    animate.children[1].style.left = '2px';
+    return false;
   }
 };
-
+// как я понял что бы можно было передавать разные функции не только animated
+// вынес в отдельную функцию
+// Функция принимает флаг если он true меняет стили и запускает анимацию
+// Ну и наоборот
 
   Progress.setValue();
+  // запускаем слежением за input
+
+
   progress.style.strokeDasharray = dash;
+  // указываем начальное значение желтого круга
+  // почему то не читает его из CSS только инлайн стили, не знаю почему
 
   animate.addEventListener("click", function(){
      if ( bool == true ){
@@ -100,43 +115,24 @@ function animated(flag){
        Progress.setMod(animated);
      }
   });
-
-  round[0].addEventListener("click", function(){
-     if ( bool == true ){
-       bool = false;
-       Progress.setMod(animated, true);
-     }else{
-       bool = true;
-       Progress.setMod(animated);
-     }
-  });
-
+  // Вешаем на кнопку слежение за действием клик и обрбатываем его
+  // Bool проверяет нажали ли на кнопку и меняет свое значение
 
   hide.addEventListener("click", function(){
     if( svg.style.opacity == '0'){
       this.style.background = '#4a4a4a';
-      round[1].style.left = '2px';
+      this.children[1].style.left = '2px';
       svg.style.opacity = '1';
     }else{
       svg.style.opacity = '0';
       this.style.background = '#7ed321';
-      round[1].style.left = '32px';
-    }
-  });
-
-  round[1].addEventListener("click", function(){
-    if( svg.style.opacity == '0'){
-      hide.style.background = '#4a4a4a';
-      this.style.left = '2px';
-      svg.style.opacity = '1';
-    }else{
-      svg.style.opacity = '0';
-      hide.style.background = '#7ed321';
-      this.style.left = '32px';
+      this.children[1].style.left = '32px';
     }
   });
 
 
+// просто на нажатие вешаем изменение стиля элемента
+// в данном случае делаем opacity = 0 и наоборот
 
 
 
