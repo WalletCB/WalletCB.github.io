@@ -1,0 +1,40 @@
+/* tebuc */
+@font-face{
+  font-family: 'Trebuchet MS';
+  src: url('../../font/trebuc.ttf');
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'Trebuchet MS';
+  src: url('../../font/trebucbd.ttf');
+  font-weight: bold;
+}
+/* brush */
+@font-face{
+  font-family: 'Brush Script Std';
+  src: url('../../font/BrushScriptStd.otf');
+}
+/* gothic */
+@font-face{
+  font-family: 'Century Gothic';
+  src: url('../../font/GOTHIC.TTF');
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'Century Gothic';
+  src: url('../../font/GOTHICB.TTF');
+  font-weight: bold;
+}
+/* Berlin Sans FB */
+@font-face{
+  font-family: 'Berlin Sans FB';
+  src: url('../../font/BRLNSR.TTF');
+  font-weight: normal;
+}
+@font-face{
+  font-family: 'Berlin Sans FB';
+  src: url('../../font/BRLNSB.TTF');
+  font-weight: bold;
+}

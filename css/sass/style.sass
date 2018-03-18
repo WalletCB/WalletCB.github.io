@@ -1,0 +1,762 @@
+*
+  margin: 0
+  padding: 0
+  list-style: none
+  text-decoration: none
+  cursor: none
+$color-yellow: #ffde00
+$color-purple: #be2598
+
+.wrapper
+  width: 1170px
+  margin: 0 auto
+  position: relative
+header
+  display: flex
+  max-width: 1920px
+  margin: 0 auto
+  background: url('../../img/background.jpg') 50% 50% no-repeat
+  height: 700px
+  position: relative
+.header
+  &__nav
+    & ul
+      display: flex
+      justify-content: flex-end
+      & li
+        padding-top: 20px
+        & a
+          font:
+            size: 24px
+            family: 'Century Gothic',sans-serif
+            weight: normal
+          color: #fff
+          margin-left: 50px
+          padding-top: 15px
+          position: relative
+          transition: all 0.4s linear
+          &:before
+            display: block
+            content: ' '
+            width: 100%
+            height: 5px
+            background: $color-yellow
+            top: -5px
+            left: 0px
+            position: absolute
+            transition: all 0.3s linear
+            transform: scaleX(0)
+          &:hover:before
+            transform: scaleX(1)
+          &:hover
+            color: $color-yellow
+  &__block
+    display: flex
+    align-items: flex-end
+    flex-direction: column
+    margin-top: 200px
+    &-title
+      color: #fff
+      margin-right: 35px
+      font:
+        size: 205px
+        family: 'Brush Script Std'
+      line-height: 150px
+    &-text
+      width: 310px
+      color: #fff
+      margin: 0px 155px 0px 0px
+      font:
+        size: 16px
+        family: 'Trebuchet MS'
+        weight: bold
+      line-height: 24px
+    &-btn
+      text-align: right
+      margin-top: 40px
+      margin-right: 60px
+      & button
+        font:
+          size: 24px
+          family: 'Trebuchet MS'
+          weight: bold
+        text-transform: uppercase
+        padding: 16px 80px
+        color: #fff
+        border: 2px solid $color-yellow
+        transform: skewX(-20deg)
+        background: none
+        position: relative
+        cursor: pointer
+        transition: all 0.4s ease
+        &:focus
+          outline: none
+        &:after
+          content: " "
+          width: 230px
+          height: 60px
+          background: $color-yellow
+          position: absolute
+          z-index: -1
+          top: 0
+          left: 0px
+          right: 0
+          bottom: 0
+          transform-origin: 0 50%
+          transform: scaleX(0)
+          transition: all 0.3s linear
+        &:hover:after
+          left: 0px
+          transform: scaleX(1)
+        &:before
+          content: " "
+          width: 230px
+          height: 60px
+          background: none
+          border: 2px solid $color-yellow
+          position: absolute
+          z-index: -2
+          bottom: 4px
+          left: 4px
+          transition: all 0.4s ease
+        &:active
+          transform: skewX(-20deg) translateX(10px) translateY(-10px)
+        &:active:before
+          transform: translateX(-6px) translateY(6px)
+  &__arrow
+    cursor: pointer
+    padding-top: 40px
+    width: 18px
+    height: 25px
+    margin: 0 auto
+    background: url('../../img/css_sprites_icon.png') -10px -10px no-repeat
+    animation: bounce 0.5s ease-in-out infinite alternate
+  &__smm
+    display: flex
+    &-icon
+      width: 25px
+      height: 25px
+      margin-right: 15px
+      cursor: pointer
+.work
+  padding-bottom: 85px
+  &__title
+    text-align: center
+    margin-top: 50px
+    padding-bottom: 40px
+    font:
+      size: 72px
+      family: 'Century Gothic',sans-serif
+      weight: bold
+    color: $color-purple
+    & span
+      color: #000
+      text-decoration: underline
+  &__row
+    display: flex
+    align-items: center
+    margin-top: 40px
+    justify-content: space-between
+    &-title
+      font:
+        size: 36px
+        family: 'Century Gothic',sans-serif
+        weight: bold
+      position: relative
+      cursor: pointer
+      &:hover
+        color: #fff
+      &:before
+        content: ''
+        width: 225px
+        height: 70px
+        background: $color-yellow
+        position: absolute
+        z-index: -1
+        top: calc(50% - 35px)
+        left: 90px
+        transition: all 0.4s ease
+      &:hover:before
+        background: $color-purple
+        left: -20px
+        width: 320px
+        transform: skewX(-20deg)
+    &-text
+      font:
+        size: 24px
+        family: 'Century Gothic',sans-serif
+      line-height: 30px
+      width: 820px
+.banner
+  max-width: 1920px
+  height: 395px
+  background: url('../../img/banner.jpg') 50% 50% no-repeat
+  margin: 0 auto
+  display: flex
+  overflow: hidden
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    position: relative
+  &__block
+    text-align: left
+    margin: 0 auto
+    &-title
+      font:
+        size: 72px
+        family: 'Century Gothic',sans-serif
+        weight: bold
+      color: $color-yellow
+      margin-top: 70px
+    &-subtitle
+      width: 840px
+      font:
+        size: 24px
+        family: 'Century Gothic',sans-serif
+        weight: bold
+      color: #fff
+      line-height: 30px
+      margin-bottom: 45px
+    & input
+      padding: 18px
+      width: 275px
+      margin-right: 65px
+      border: none
+      font:
+        size: 14px
+        weight: bold
+      color: #000
+    & ::placeholder
+      font:
+        size: 14px
+        weight: bold
+      color: #000
+    & input[type="submit"]
+      position: absolute
+      top: 0px
+      right: -200px
+      width: 393px
+      height: 112px
+      border: none
+      transform: rotate(-90deg) translateX(-142px)
+      background: $color-purple
+      cursor: pointer
+      font:
+        size: 48px
+        family: 'Century Gothic',sans-serif
+        weight: bold
+      text-transform: uppercase
+      color: $color-yellow
+      overflow: hidden
+      &:focus
+        outline: none
+.start
+  padding-bottom: 160px
+  &__title
+    text-align: center
+    margin-top: 60px
+    padding-bottom: 40px
+    font:
+      size: 72px
+      family: 'Century Gothic',sans-serif
+      weight: bold
+    color: $color-purple
+    & span
+      color: #000
+      text-decoration: underline
+  &__subtitle
+    text-align: center
+    margin-bottom: 60px
+    font:
+      size: 24px
+      family: 'Century Gothic',sans-serif
+    color: #000
+    line-height: 30px
+  &__row
+    display: flex
+    justify-content: space-around
+    margin-bottom: 100px
+  &__block
+    width: 516px
+    height: 316px
+    position: relative
+    text-align: center
+    &-btn
+      width: 60%
+      height: 30%
+      cursor: pointer
+      font:
+        size: 40px
+        family: 'Century Gothic'
+        weight: bold
+      color: #fff
+      text-transform: uppercase
+      border: none
+      background: #ff00ff
+      margin-top: calc(30% - 50px)
+      display: none
+    &-img
+      width: 100%
+      position: absolute
+      top: 73px
+      left: 0
+      z-index: -1
+    &-title
+      font:
+        size: 48px
+        family: 'Berlin Sans FB'
+        weight: bold
+      color: #000
+      padding-bottom: 15px
+    &-text
+      font:
+        size: 24px
+        family: 'Century Gothic',sans-serif
+      color: #000
+      line-height: 30px
+      margin-top: 80px
+    &-price
+      font:
+        size: 44px
+        family: 'Century Gothic',sans-serif
+        weight: bold
+      color: #000
+      margin-top: 20px
+.faq
+  max-width: 1920px
+  height: 360px
+  background: $color-yellow
+  margin: 0 auto
+  &__title
+    text-align: center
+    position: relative
+    top: calc(-50px)
+    font:
+      size: 72px
+      family: 'Century Gothic',sans-serif
+      weight: bold
+    color: $color-purple
+    & span
+      color: #000
+      text-decoration: underline
+  &__slider
+    position: absolute
+    top: 0
+    left: 0
+    width: 115px
+    height: 360px
+    background: $color-purple
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    &-up
+      width: 35px
+      height: 19px
+      background: url('../../img/css_sprites_icon.png') -158px -10px no-repeat
+      margin-bottom: 55px
+      cursor: pointer
+      &:hover
+        background: url('../../img/css_sprites_icon.png') -213px -10px no-repeat
+    &-down
+      width: 35px
+      height: 19px
+      background: url('../../img/css_sprites_icon.png') -48px -10px no-repeat
+      margin-top: 55px
+      cursor: pointer
+      &:hover
+        background: url('../../img/css_sprites_icon.png') -103px -10px no-repeat
+    &-text
+      font:
+        size: 48px
+        family: 'Century Gothic',sans-serif
+        weight: bold
+      color: $color-yellow
+  &__blocks
+    height: 242px
+    width: auto
+    overflow: hidden
+  &__block
+    margin-left: 150px
+    align-self: center
+    transition: all 0.4s ease
+    &-title
+      font:
+        size: 44px
+        family: 'Century Gothic',sans-serif
+        weight: bold
+      color: #000
+    &-text
+      font:
+        size: 36px
+        family: 'Century Gothic',sans-serif
+        weight: normal
+      line-height: 48px
+      color: #000
+@keyframes bounce
+  0%
+    transform: translateY(0px)
+  100%
+    transform: translateY(20px)
+canvas
+  position: fixed
+  left: 0
+  top: 0
+.facebook
+  fill: #000
+  &:hover
+    background: url('../../img/css_sprites.png') -44px -10px no-repeat
+.inst
+  width: 25px
+  height: 25px
+  background: url('../../img/css_sprites.png') -78px -10px no-repeat
+  &:hover
+    background: url('../../img/css_sprites.png') -123px -10px no-repeat
+.vk
+  width: 25px
+  height: 25px
+  background-size: 25px
+  background: url('../../img/vk.svg') 50% 50% no-repeat
+  &:hover
+    background: url('../../img/vk.svg') no-repeat
+::-webkit-scrollbar
+  width: 5px
+  background: none
+  margin-right: -10px
+::-webkit-scrollbar-thumb
+  border-radius: 10px
+  background: $color-purple
+::-webkit-scrollbar-thumb:hover
+  border-radius: 0px
+  background: $color-purple
+
+@media screen and (min-width: 980px) and (max-width: 1170px)
+  .wrapper
+    width: 960px
+  .header
+    height: 592px
+    background: url('../../img/background_960.jpg') 50% 50% no-repeat
+    &__nav
+      & ul
+        display: flex
+        justify-content: center
+    &__block
+      margin-top: 170px
+      &-title
+        font-size: 172px
+        margin-right: 90px
+        line-height: 100px
+    &__smm
+      display: none
+  .work
+    &__row
+      &-text
+        width: 590px
+  .banner
+    &__block
+      margin: 0px 0px 0px 30px
+      &-subtitle
+        font-size: 22px
+        width: 770px
+  .start
+    padding-bottom: 100px
+    &__row
+      justify-content: space-between
+    &__block
+      width: 470px
+  .faq
+    &__blocks
+      height: 218px
+    &__block
+      &-text
+        font-size: 30px
+        line-height: 42px
+@media screen and (min-width: 780px) and (max-width: 980px)
+  .wrapper
+    width: 780px
+  .header
+    height: 550px
+    background: url('../../img/background_780.jpg') 50% 50% no-repeat
+    &__nav
+      & ul
+        display: flex
+        justify-content: center
+        & li:nth-child(3)
+          display: none
+        & li:nth-child(4)
+          display: none
+    &__block
+      margin-top: 130px
+      &-title
+        font-size: 137px
+        margin-right: 40px
+        line-height: 100px
+      &-text
+        margin-right: 50px
+    &__smm
+      display: none
+  .work
+    &__row
+      width: 600px
+      flex-direction: column
+      margin-left: 13%
+      &-text
+        width: 590px
+      &-title
+        align-self: flex-start
+        &:before
+          display: none
+        &:hover
+          color: #000
+  .banner
+    &__block
+      margin: 0.1px
+      &-subtitle
+        font-size: 18px
+        width: 625px
+      & input
+          margin-right: 30px
+      & input[type="submit"]
+        right: -190px
+  .start
+    padding-bottom: 100px
+    &__row
+      flex-direction: column
+      justify-content: center
+      align-items: center
+    &__block
+      width: 615px
+      margin-bottom: 155px
+      &-text
+        font-size: 28px
+        line-height: 36px
+        margin-top: 105px
+      &-price
+        margin-top: 25px
+  .faq
+    &__blocks
+      height: 260px
+    &__block
+      &-text
+        font-size: 30px
+        line-height: 42px
+@media screen and (min-width: 540px) and (max-width: 780px)
+  .wrapper
+    width: 555px
+  .header
+    height: 550px
+    background: url('../../img/background_540.jpg') 50% 50% no-repeat
+    &__nav
+      & ul
+        display: flex
+        justify-content: center
+        & li:nth-child(3)
+          display: none
+        & li:nth-child(4)
+          display: none
+    &__block
+      margin-top: 65px
+      align-items: center
+      text-align: center
+      &-title
+        font-size: 137px
+        margin-right: 0px
+        line-height: 100px
+      &-text
+        width: 480px
+        margin-right: 0px
+      &-btn
+        margin: 45px 0px 0px 0px
+    &__arrow
+      margin-top: 80px
+    &__smm
+      display: none
+  .work
+    padding-bottom: 40px
+    &__row
+      margin: 0 auto
+      padding-bottom: 50px
+      width: 480px
+      flex-direction: column
+      text-align: center
+      &-text
+        width: 490px
+      &-title
+        &:before
+          display: none
+        &:hover
+          color: #000
+  .banner
+    &__block
+      margin: 0px 0px 0px 20px
+      &-title
+        font-size: 48px
+        padding-top: 40px
+        margin: 0
+      &-subtitle
+        font-size: 18px
+        width: 345px
+        margin-bottom: 5px
+      & input
+          margin-right: 30px
+          margin-top: 15px
+      & input[type="submit"]
+        right: -140px
+        margin: 0
+  .start
+    padding-bottom: 100px
+    &__subtitle
+      text-align: center
+      width: 520px
+    &__row
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      margin-bottom: 0px
+    &__block
+      width: 420px
+      margin-bottom: 55px
+      &-text
+        font-size: 20px
+        line-height: 28px
+        margin-top: 60px
+      &-price
+        margin-top: 10px
+  .faq
+    &__blocks
+      height: 194px
+    &__block
+      margin-left: 135px
+      &-title
+        font-size: 30px
+      &-text
+        font-size: 20px
+        line-height: 32px
+@media screen and (min-width: 360px) and (max-width: 540px)
+  .wrapper
+    width: 340px
+  .header
+    height: 550px
+    background: url('../../img/background_540.jpg') 50% 50% no-repeat
+    &__nav
+      & ul
+        display: flex
+        justify-content: center
+        & li
+          display: none
+        & li:last-child
+          display: block
+    &__block
+      margin-top: 65px
+      align-items: center
+      text-align: center
+      &-title
+        font-size: 120px
+        margin-right: 0px
+        line-height: 100px
+      &-text
+        width: 100%
+        margin-right: 0px
+      &-btn
+        margin: 45px 0px 0px 0px
+    &__arrow
+      margin-top: 50px
+    &__smm
+      display: none
+  .work
+    padding-bottom: 40px
+    &__title
+      font-size: 48px
+    &__row
+      margin: 0 auto
+      padding-bottom: 50px
+      width: 340px
+      flex-direction: column
+      text-align: center
+      &-text
+        width: 100%
+      &-title
+        &:before
+          display: none
+        &:hover
+          color: #000
+  .banner
+    overflow: visible
+    &__block
+      margin: 0px 0px 0px 20px
+      &-title
+        font-size: 48px
+        padding-top: 30px
+        margin: 0
+      &-subtitle
+        font-size: 18px
+        width: 345px
+        margin-bottom: 5px
+      & input
+          margin-right: 30px
+          margin-top: 15px
+      & input[type="submit"]
+        text-align: center
+        margin: 15px 0px 0px 0px
+        height: 60px
+        width: 312px
+        padding: 0
+        position: static
+        transform: rotate(0deg) translateX(0px)
+        font-size: 20px
+  .start
+    margin-top: 80px
+    padding-bottom: 100px
+    &__title
+      font-size: 48px
+    &__subtitle
+      font-size: 20px
+      line-height: 28px
+      text-align: center
+      width: 340px
+    &__row
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      margin-bottom: 0px
+    &__block
+      width: 340px
+      margin-bottom: 0px
+      &-text
+        font-size: 17px
+        line-height: 20px
+        margin-top: 55px
+      &-price
+        font-size: 30px
+        margin-top: 10px
+  .faq
+    &__blocks
+      height: 214px
+    &__title
+      font-size: 48px
+      top: calc(-35px)
+    &__slider
+      flex-direction: row
+      align-items: center
+      width: 340px
+      height: 80px
+      left: 0px
+      top: 105%
+      &-up
+        margin-bottom: 0
+        padding: 0
+        margin-right: 35px
+        transform: rotate(270deg)
+      &-down
+        margin-top: 0
+        margin-left: 35px
+        padding: 0
+        transform: rotate(270deg)
+    &__block
+      margin-left: 0px
+      text-align: center
+      &-title
+        font-size: 24px
+      &-text
+        font-size: 20px
+        line-height: 32px
